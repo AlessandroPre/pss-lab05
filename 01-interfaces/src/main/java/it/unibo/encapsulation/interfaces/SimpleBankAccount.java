@@ -95,6 +95,13 @@ public class SimpleBankAccount implements BankAccount {
          * negativo) - Il prelievo va a buon fine solo se l'id utente
          * corrisponde
          */
+        if(id == this.id){
+            this.transactions += 1;
+            this.balance -= amount - ATM_TRANSACTION_FEE;
+        }
+        else{
+           System.out.println("Prelievo non riuscito"); 
+        }
     }
 
     public void chargeManagementFees(final int id) {

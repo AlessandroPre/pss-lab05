@@ -62,6 +62,13 @@ public class SimpleBankAccount implements BankAccount {
          * conto. Note: - Il conto puo' andare in rosso (ammontare negativo) -
          * Il prelievo va a buon fine solo se l'id utente corrisponde
          */
+        if(id == this.id){
+            this.transactions += 1;
+            this.balance -= amount;
+        }
+        else{
+           System.out.println("Prelievo non riuscito"); 
+        }
     }
 
     public void depositFromATM(final int id, final double amount) {

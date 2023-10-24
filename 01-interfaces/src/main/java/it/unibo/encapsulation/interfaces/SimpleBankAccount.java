@@ -78,6 +78,13 @@ public class SimpleBankAccount implements BankAccount {
          * all'uso dell'ATM (bancomat) Nota: il deposito va a buon fine solo se
          * l'id utente corrisponde
          */
+        if(id == this.id){
+            this.transactions += 1;
+            this.balance += amount - ATM_TRANSACTION_FEE;
+        }
+        else{
+           System.out.println("Deposito non riuscito"); 
+        }
     }
 
     public void withdrawFromATM(final int id, final double amount) {

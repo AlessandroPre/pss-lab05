@@ -82,7 +82,12 @@ public class StrictBankAccount implements BankAccount {
         /*
          * Riduce il bilancio del conto di un ammontare pari alle spese di gestione
          */
-        this.balance 
+        if(id == this.id){
+            this.balance -= MANAGEMENT_FEE - N_TRANSACTIONS_FEE * getTransactionsCount();
+        }
+        else{
+            System.out.println("Errore");
+        }
     }
 
     /*

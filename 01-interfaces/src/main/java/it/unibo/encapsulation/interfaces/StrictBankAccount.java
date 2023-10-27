@@ -6,6 +6,8 @@ public class StrictBankAccount implements BankAccount {
     private double balance;
     private int transactions;
     private final static double ATM_TRANSACTION_FEE = 1;
+    private final static int MANAGEMENT_FEE = 5;
+    private final static float N_TRANSACTIONS_FEE = 0.1f;
 
     public StrictBankAccount(final int id, final double balance) {
         this.id = id;
@@ -80,6 +82,7 @@ public class StrictBankAccount implements BankAccount {
         /*
          * Riduce il bilancio del conto di un ammontare pari alle spese di gestione
          */
+        this.balance 
     }
 
     /*

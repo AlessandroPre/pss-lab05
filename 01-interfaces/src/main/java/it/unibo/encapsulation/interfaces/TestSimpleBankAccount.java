@@ -12,39 +12,39 @@ public class TestSimpleBankAccount {
 
         // 1) Creare l' AccountHolder relativo a Andrea Rossi con id 1
 
-        AccountHolder ah1 = new AccountHolder("Andrea", "Rossi", 1);
+        final AccountHolder aRossi = new AccountHolder("Andrea", "Rossi", 1);
         // 2) Creare l' AccountHolder relativo a Alex Bianchi con id 2
 
-        AccountHolder ah2 = new AccountHolder("Alex", "Bianchi", 12);
+        final AccountHolder aBianchi = new AccountHolder("Alex", "Bianchi", 2);
         // 3) Creare i due SimpleBankAccount corrispondenti
         
-        SimpleBankAccount sb1 = new SimpleBankAccount(1, 0);
-        SimpleBankAccount sb2 = new SimpleBankAccount(2, 0);
+        final SimpleBankAccount rossisAccount = new SimpleBankAccount(aRossi.getUserID(), 0);
+        final SimpleBankAccount bianchisAccount = new SimpleBankAccount(aBianchi.getUserID(), 0);
 
         // 4) Effettuare una serie di depositi e prelievi
 
-        sb1.deposit(1, 100);
-        sb2.deposit(1, 100);
-        sb2.withdrawFromATM(2, 200);
-        sb2.deposit(2, 1500);
-        sb1.withdraw(1, 500);
-        sb1.depositFromATM(1, 200);
+        rossisAccount.deposit(1, 100);
+        bianchisAccount.deposit(1, 100);
+        bianchisAccount.withdrawFromATM(2, 200);
+        bianchisAccount.deposit(2, 1500);
+        rossisAccount.withdraw(1, 500);
+        rossisAccount.depositFromATM(1, 200);
 
         /*
          * 5) Stampare a video l'ammontare dei due conti e verificare la
          * correttezza del risultato
          */
 
-        System.out.println(sb1.getBalance());
-        System.out.println(sb2.getBalance());
+        System.out.println(rossisAccount.getBalance());
+        System.out.println(bianchisAccount.getBalance());
 
         // 6) Provare a prelevare fornendo un id utente sbagliato
 
-        sb1.withdraw(0, 500);
+        rossisAccount.withdraw(0, 500);
 
         // 7) Controllare nuovamente l'ammontare
         
-        System.out.println(sb1.getBalance());
+        System.out.println(rossisAccount.getBalance());
 
     }
 }

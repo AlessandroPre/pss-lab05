@@ -48,12 +48,18 @@ public class TestBankAccount {
         /*
          * 9) Depositare nuovamente €10000 in entrambi i conti
          */
+        aRossi.deposit(1, 10000);
+        aBianchi.deposit(2, 10000);
         /*
          * 10) Invocare il metodo computeManagementFees su entrambi i conti
          */
+        aRossi.chargeManagementFees(AndreaRossi.getUserID());
+        aBianchi.chargeManagementFees(AlexBianchi.getUserID());
         /*
          * 11) Stampare a video l'ammontare corrente
          */
+        System.out.println(aRossi.getBalance());
+        System.out.println(aBianchi.getBalance());
         /*
          * 12) Qual è il risultato e perché?
          */
